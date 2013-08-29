@@ -1,0 +1,23 @@
+<html>
+<head>
+   
+    <style>
+    </style>
+</head>
+    <body>
+        <h1></h1>
+        <input  id="speech" x-webkit-speech />
+
+         <script>
+        var test = document.getElementById('speech');
+        test.onwebkitspeechchange = function() {
+            //if(test.value =="red")
+                document.body.style.backgroundColor = test.value;
+            
+
+        }
+
+    </script>
+    </body>
+</html>
+
