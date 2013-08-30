@@ -1,28 +1,44 @@
 <html>
 <head>
-    <style>
+  <title>VOICE-O-COLOR</title>
+  <style>
     body{
       font-family: Arial, sans-serif;
       margin: 20% auto;
-
+      color: #777;
     }
     input{
-    width: 50%;
-    margin: 2% 25%;
-    padding: 10px;
-    font-size: 3em;
+      width: 50%;
+      margin: 2% 25%;
+      padding: 10px;
+      font-size: 3em;
     }
-    h1{
-        text-align:center;
+    h1, h2{
+      text-align:center;
+      color:#777;
     }
-    </style>
+  </style>
 </head>
     <body>
+<<<<<<< HEAD
 
         <h1 id="header">Say a color to change the background!</h1>
         <input  id="mic" x-webkit-speech onwebkitspeechchange="changeColor(this.value)" />
 
          <script type="text/javascript">
+=======
+        <h1>VOICE-O-COLOR</h1>
+        <h2>Say a color to change the background of this page.</h2>
+        <input id="speech" x-webkit-speech />
+
+
+         <script>
+        var test = document.getElementById('speech');
+        test.onwebkitspeechchange = function() {
+            //if(test.value =="red")
+                document.body.style.backgroundColor = test.value;
+        }
+>>>>>>> 7f4dee154480f4d69a8a7b2b9917425544c70ced
 
             function transcribe(words) {
                 //document.getElementById("speech").value = words;

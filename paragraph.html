@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>VOICE-O-PARAGRAPH</title>
+  <style>
+    body{
+      font-family: Times, serif;
+      margin: 20% auto;
+      color: #777;
+    }
+    input{
+      width: 50%;
+      margin: 2% 25%;
+      padding: 10px;
+      font-size: 3em;
+    }
+    h1, h2{
+      text-align:center;
+      color:#777;
+    }
+    #paragraph{
+      width: 50%;
+      margin: 30px auto;
+      line-height: 1.5;
+      font-size: 22px;
+    }
+  </style>
+
+</head>
+    <body>
+        <h1>VOICE-O-PARAGRAPH</h1>
+        <h2>Say left, right, or center to align the paragraph.</h2>
+        <input id="speech" x-webkit-speech />
+                  <script>
+        var test = document.getElementById('speech');
+        test.onwebkitspeechchange = function() {
+          //if(test.value =="red")
+          // document.body.style.backgroundColor = test.value;
+          // document.getElementById('paragraph').style.color= test.value;
+          // document.getElementById('paragraph').style.fontWeight= test.value;
+          // Align text
+          // document.getElementById('paragraph').style.textAlign= test.value;
+          // Move paragraph from the top
+          // document.getElementById('paragraph').style.top= test.value;
+          // Change content
+          document.getElementById('paragraph').style.content= test.value;
+
+          console.log(test);
+        }
+        </script>
+        <p id="paragraph" style="position:relative;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </body>
+</html>
+
