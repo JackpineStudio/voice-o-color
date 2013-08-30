@@ -20,45 +20,41 @@
   </style>
 </head>
     <body>
-<<<<<<< HEAD
-
         <h1 id="header">Say a color to change the background!</h1>
         <input  id="mic" x-webkit-speech onwebkitspeechchange="changeColor(this.value)" />
 
          <script type="text/javascript">
-=======
         <h1>VOICE-O-COLOR</h1>
         <h2>Say a color to change the background of this page.</h2>
         <input id="speech" x-webkit-speech />
 
 
-         <script>
-        var test = document.getElementById('speech');
-        test.onwebkitspeechchange = function() {
-            //if(test.value =="red")
-                document.body.style.backgroundColor = test.value;
-        }
->>>>>>> 7f4dee154480f4d69a8a7b2b9917425544c70ced
+        <script>
+            var test = document.getElementById('speech');
+            test.onwebkitspeechchange = function() {
+                //if(test.value =="red")
+                    document.body.style.backgroundColor = test.value;
+            }
 
-            function transcribe(words) {
-                //document.getElementById("speech").value = words;
-                document.getElementById("mic").value = "";
-                //document.getElementById("speech").focus();
-            }
-            function changeColor(words) {
-                /* e.g. Move 300 violet */
-                var array = words.split(" ");
-                var input = "";
-                var margin = "";
-                var color = ""
-                margin = array[1];
-                for (var i = 2; i<array.length; i++) {
-                    color += array[i];
+                function transcribe(words) {
+                    //document.getElementById("speech").value = words;
+                    document.getElementById("mic").value = "";
+                    //document.getElementById("speech").focus();
                 }
-                document.body.style.backgroundColor = color;
-                document.getElementById("header").style.marginLeft = margin +"px";
-            }
-        </script>
+                function changeColor(words) {
+                    /* e.g. Move 300 violet */
+                    var array = words.split(" ");
+                    var input = "";
+                    var margin = "";
+                    var color = ""
+                    margin = array[1];
+                    for (var i = 2; i<array.length; i++) {
+                        color += array[i];
+                    }
+                    document.body.style.backgroundColor = color;
+                    document.getElementById("header").style.marginLeft = margin +"px";
+                }
+            </script>
     </body>
 </html>
 
