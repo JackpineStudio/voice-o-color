@@ -19,24 +19,29 @@
 </head>
     <body>
 
-        <h1>Say a color to change the background!</h1>
+        <h1 id="header">Say a color to change the background!</h1>
         <input  id="mic" x-webkit-speech onwebkitspeechchange="changeColor(this.value)" />
 
          <script type="text/javascript">
-        function transcribe(words) {
-            //document.getElementById("speech").value = words;
-            document.getElementById("mic").value = "";
-            //document.getElementById("speech").focus();
-        }
-        function changeColor(words) {
-            //if(test.value =="red")
+
+            function transcribe(words) {
+                //document.getElementById("speech").value = words;
+                document.getElementById("mic").value = "";
+                //document.getElementById("speech").focus();
+            }
+            function changeColor(words) {
+                /* e.g. Move 300 violet */
                 var array = words.split(" ");
-                var color = "";
-                for (var i = 0; i<array.length; i++)
+                var input = "";
+                var margin = "";
+                var color = ""
+                margin = array[1];
+                for (var i = 2; i<array.length; i++) {
                     color += array[i];
-                //alert(color);
+                }
                 document.body.style.backgroundColor = color;
-        }
+                document.getElementById("header").style.marginLeft = margin +"px";
+            }
         </script>
     </body>
 </html>
